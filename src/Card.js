@@ -65,3 +65,9 @@ function sayItAgain(turnNum){
 
 sayItAgain(turn);
 sayItAgain(turn2);
+
+// class Deck{
+//   constructor([array]){
+//     this.array = array;
+//   }
+// }
