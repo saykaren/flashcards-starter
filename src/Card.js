@@ -26,15 +26,12 @@ class Turn{
     if(this.userAnswer == this.card.correctAnswer){
       return true;
     } else {
-      console.log(`false is for userAnswer ${this.userAnswer}`);
-      console.log(`false is for this card answer ${this.card.correctAnswer}`);
-      console.log(typeof this.userAnswer);
       return false;
     }
   }
 
   giveFeedback(){
-    if(this.evaluateGuess == true){
+    if(this.userAnswer == this.card.correctAnswer){
       return "correct!";
     } else{
       console.log(`incorrect as.... ${this.evaluateGuess()}`);
@@ -67,4 +64,4 @@ function sayItAgain(turnNum){
 }
 
 sayItAgain(turn);
-// sayItAgain(turn2);
+sayItAgain(turn2);
