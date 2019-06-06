@@ -1,20 +1,10 @@
 class Card{
-  constructor(num, question, options, correctAnswer, userAnswer){
+  constructor(num, question, options, correctAnswer){
     this.num = num;
     this.question = question;
     this.options = options;
     this.correctAnswer = correctAnswer;
-    this.userAnswer = userAnswer;
-  }
-
-  // compareCard(){
-  //   if(this.userAnswer == this.correctAnswer){
-  //     return this.userAnswer;
-  //   }
-  //   else {
-  //     return "Incorrect";
-  //   }
-  // }
+    }
 
 }
 
@@ -33,9 +23,12 @@ class Turn{
   }
 
   evaluateGuess(){
-    if(this.userAnswer == this.card){
+    if(this.userAnswer == this.card.correctAnswer){
       return true;
     } else {
+      console.log(`false is for userAnswer ${this.userAnswer}`);
+      console.log(`false is for this card answer ${this.card.correctAnswer}`);
+      console.log(typeof this.userAnswer);
       return false;
     }
   }
@@ -44,6 +37,8 @@ class Turn{
     if(this.evaluateGuess == true){
       return "correct!";
     } else{
+      console.log(`incorrect as.... ${this.evaluateGuess()}`);
+      console.log(typeof this.evaluateGuess());
       return "incorrect!";
     }
   }
@@ -51,8 +46,25 @@ class Turn{
 }
 
 const card = new Card(1, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
-const turn = new Turn('single stock', card);
+const turn = new Turn("ETF", card);
+const turn2 = new Turn("ETF", card);
+
+
 turn.returnGuess()
 turn.returnCard()
 turn.evaluateGuess()
 turn.giveFeedback()
+
+function sayIt(ar1){
+  console.log(ar1);
+};
+
+function sayItAgain(turnNum){
+  sayIt(turnNum.returnGuess());
+  sayIt(turnNum.returnCard());
+  sayIt(turnNum.evaluateGuess());
+  sayIt(turnNum.giveFeedback());
+}
+
+sayItAgain(turn);
+// sayItAgain(turn2);
