@@ -72,21 +72,13 @@ class Deck{
     // this.array = array;
   }
 
-  whatTheFuck(){
-    for(let i=0; i<this.cardNum.length; i++){
-      console.log(this.cardNum[i]);
-    };
-    let newArray = [];
-    newArray.push(this.card);
-    console.log("NewArray is "+newArray.length);
-    return newArray;
-  }
-
   countCards(){
-    const result = [];
-    result.push(this.card);
-    alert(result[0]);
-    return result.length;
+    let newArray = [];    
+    for(let i=0; i<this.cardNum.length; i++){
+      newArray.push(this.cardNum[i]);
+      console.log("NewArray is the following"+newArray+"That is "+newArray.length);
+    };
+    return newArray.length;
   }
 
   arrayList(){
@@ -103,6 +95,5 @@ const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 
 
 const deck = new Deck([card1, card2, card3]);
 
-// console.log("Deck count"+deck.countCards());
+console.log("Deck count"+deck.countCards());
 // console.log("Deck contents"+deck.arrayList());
-console.log("what is this "+deck.whatTheFuck());
