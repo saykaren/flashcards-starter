@@ -66,8 +66,43 @@ function sayItAgain(turnNum){
 sayItAgain(turn);
 sayItAgain(turn2);
 
-// class Deck{
-//   constructor([array]){
-//     this.array = array;
-//   }
-// }
+class Deck{
+  constructor(cardNum){
+    this.cardNum = cardNum;
+    // this.array = array;
+  }
+
+  whatTheFuck(){
+    for(let i=0; i<this.cardNum.length; i++){
+      console.log(this.cardNum[i]);
+    };
+    let newArray = [];
+    newArray.push(this.card);
+    console.log("NewArray is "+newArray.length);
+    return newArray;
+  }
+
+  countCards(){
+    const result = [];
+    result.push(this.card);
+    alert(result[0]);
+    return result.length;
+  }
+
+  arrayList(){
+    const result =[];
+    result.push(this.card);
+    return result;
+  }
+}
+
+
+const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+
+const deck = new Deck([card1, card2, card3]);
+
+// console.log("Deck count"+deck.countCards());
+// console.log("Deck contents"+deck.arrayList());
+console.log("what is this "+deck.whatTheFuck());
