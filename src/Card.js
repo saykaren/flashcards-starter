@@ -35,8 +35,8 @@ class Turn{
     if(this.userAnswer == this.card.correctAnswer){
       return "correct!";
     } else{
-      console.log(`incorrect as.... ${this.evaluateGuess()}`);
-      console.log(typeof this.evaluateGuess());
+      // console.log(`incorrect as.... ${this.evaluateGuess()}`);
+      // console.log(typeof this.evaluateGuess());
       return "incorrect!";
     }
   }
@@ -74,20 +74,25 @@ class Deck{
   }
 
   countCards(){
-    let newArray = [];    
-    for(let i=0; i<this.cardNum.length; i++){
-      newArray.push(this.cardNum[i]);
-      console.log("NewArray is the following"+newArray+"That is "+newArray.length);
-    };
+    ///reduce - Maire suggested 
+    // let newArray = [];    
+    // for(let i=0; i<this.cardNum.length; i++){
+    //   newArray.push(this.cardNum[i]);
+    //   console.log("NewArray is the following"+newArray+"That is "+newArray.length);
+    // };
+    const newArray = this.cardNum.reduce((acc, card) => {
+        acc.push(card) 
+        return acc
+    }, []);
     return newArray.length;
   }
 
   cardDetails(){
-    let newArray = [];
-    for(let i=0; i<this.cardNum.length; i++){
-      newArray.push(this.cardNum[i]);
-    };
-    // console.log(newArray[0]);
+        const newArray = this.cardNum.reduce((acc, card) => {
+        acc.push(card) 
+        return acc
+    }, []);
+    console.log(newArray);
     return newArray;
   }
 
@@ -99,13 +104,13 @@ const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix
 const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
 const card4 = new Card(10, 'What is George\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Lex');
 
-const deck = new Deck([card1, card2, card3, card4]);
+const deck = new Deck([card2, card1, card3, card4]);
 
 // console.log("Deck count "+deck.countCards());
 // console.log("cardDetails are "+ deck.cardDetails());
 
 //below is working 06/11/2019 but need to extract in Round class -3:41
-// const detailsCard = deck.cardDetails();
+var detailsCard = deck.cardDetails();
 // console.log(detailsCard[0]);
 // console.log(`Hello `+detailsCard[0]["correctAnswer"]);
 
@@ -118,10 +123,10 @@ class Round {
   ///////////Maire help I am able to extract a sub array like out of this below I can get it to say 1 but I cannot seem to get the whole array to extract 6-11 3:47pm
   returnCurrentCard(){
     ///////method that returns the current card being played
-    const detailsCard = deck.cardDetails();
+    var detailsCard = deck.cardDetails();
     console.log(detailsCard[0]);
     console.log(`Hello `+detailsCard[0]["num"]);
-    return detailsCard[0]["num"];
+    return detailsCard[0];
   }
   
   takeTurn(){
@@ -141,4 +146,7 @@ class Round {
 const round = new Round(deck);
 const firstCard = round.returnCurrentCard();
 
-console.log("The round has the first card " + firstCard); 
+///Maire help how can I pull out a whole array? I can get a single section but not the whole array - per requirement should not only be the 
+console.log(firstCard);
+// console.log("The round has the first card, did it work? " + firstCard); 
+// console.log(deck);
