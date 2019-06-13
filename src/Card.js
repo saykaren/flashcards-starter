@@ -74,12 +74,6 @@ class Deck{
   }
 
   countCards(){
-    ///reduce - Maire suggested 
-    // let newArray = [];    
-    // for(let i=0; i<this.cardNum.length; i++){
-    //   newArray.push(this.cardNum[i]);
-    //   console.log("NewArray is the following"+newArray+"That is "+newArray.length);
-    // };
     const newArray = this.cardNum.reduce((acc, card) => {
         acc.push(card) 
         return acc
@@ -92,7 +86,7 @@ class Deck{
         acc.push(card) 
         return acc
     }, []);
-    console.log(newArray);
+    // console.log(newArray);
     return newArray;
   }
 
@@ -109,28 +103,29 @@ const deck = new Deck([card2, card1, card3, card4]);
 // console.log("Deck count "+deck.countCards());
 // console.log("cardDetails are "+ deck.cardDetails());
 
-//below is working 06/11/2019 but need to extract in Round class -3:41
 var detailsCard = deck.cardDetails();
-// console.log(detailsCard[0]);
-// console.log(`Hello `+detailsCard[0]["correctAnswer"]);
+
 
 ///////////////Round Class//
 //takes and records guess also compares to evaluateGuess() from Turn class
 class Round {
   constructor(deck){
     this.deck = deck;
+    this.incorrectguesses = [];
   }
-  ///////////Maire help I am able to extract a sub array like out of this below I can get it to say 1 but I cannot seem to get the whole array to extract 6-11 3:47pm
+  
   returnCurrentCard(){
     ///////method that returns the current card being played
     var detailsCard = deck.cardDetails();
-    console.log(detailsCard[0]);
-    console.log(`Hello `+detailsCard[0]["num"]);
     return detailsCard[0];
   }
   
   takeTurn(){
-
+    console.log("here at takeTurn");
+    /////////boolean if guess was right
+    
+    console.log(this.incorrectguesses);
+    console.log(turn.evaluateGuess());
   }
 
   calculatePercentCorrect(){
@@ -146,7 +141,8 @@ class Round {
 const round = new Round(deck);
 const firstCard = round.returnCurrentCard();
 
-///Maire help how can I pull out a whole array? I can get a single section but not the whole array - per requirement should not only be the 
-console.log(firstCard);
+
+// console.log(firstCard);
 // console.log("The round has the first card, did it work? " + firstCard); 
 // console.log(deck);
+console.log(round.takeTurn());
