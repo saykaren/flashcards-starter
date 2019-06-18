@@ -89,6 +89,12 @@ class Round extends Turn{
   
   //takeTuren not working.....6.18.2019 ............10:31am
   takeTurn(){
+    console.log("takeTurn yes I am here");
+    var whosTurn = this.incorrectguesses;
+    // var whosTurn = super.userAnswer;
+    // console.log(whosTurn);
+    // return whosTurn;
+
     /////////boolean if guess was right
     //const newTurn = new Turn(Turn.returnGuess(), card);
     
@@ -110,6 +116,7 @@ class Round extends Turn{
     // return newTurn;
     // return result;
     // return newTurn;
+    return whosTurn;
   }
 
   calculatePercentCorrect(){
@@ -123,18 +130,20 @@ class Round extends Turn{
 
 }
 
-
+/////////Cards -Creating new Cards with details
 const card = new Card(1, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
+const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+const card4 = new Card(10, 'What is George\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Lex');
+
+
+//////Turns -Creating new turns that take user answer and compares againes card
 const turn = new Turn("Bonds", card);
 const turn2 = new Turn("single stock", card);
 const turn3 = new Turn("ETF", card);
 
-
-turn.returnGuess()
-turn.returnCard()
-turn.evaluateGuess()
-turn.giveFeedback()
-
+///Function to output into Console Turn details 
 function sayIt(ar1){
   console.log(ar1);
 };
@@ -146,28 +155,36 @@ function sayItAgain(turnNum){
   sayIt(turnNum.giveFeedback());
 }
 
-sayItAgain(turn);
-sayItAgain(turn2);
-sayItAgain(turn3);
+// To check turns details 
+// sayItAgain(turn);
+// sayItAgain(turn2);
+// sayItAgain(turn3);
 
 
-const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-const card4 = new Card(10, 'What is George\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Lex');
 
+//////////Deck - to issues a new Deck with certain cards - right now all the cards I made
 const deck = new Deck([card, card1, card2, card1, card3, card4]);
 
-console.log("Deck count "+deck.countCards());
-// console.log("cardDetails are "+ deck.cardDetails());
+//////////Round - to create a first round with the deck of cards 
+const round1 = new Round(deck);
 
-var detailsCard = deck.cardDetails();
+const round1Result = round1.takeTurn();
+console.log(`Hello ${round1Result}`);
+console.log(round1Result);
 
-const round = new Round(deck);
-const firstCard = round.returnCurrentCard();
+//Checking how many cards are in Deck - working 06/18 ...12:44pm
+// console.log("Deck count "+deck.countCards());
+
+//Checking if card details are coming out --working 06/18 @ 12:45pm
+// var detailsCard = deck.cardDetails();
+// console.log(detailsCard);
+
+//Checking if first card is working - Yes it is 06/18/2019 @ 12:46pm 
+// const firstCard = round1.returnCurrentCard();
+// console.log(firstCard);
 
 
 // console.log(firstCard);
 // console.log("The round has the first card, did it work? " + firstCard); 
 // console.log(deck);
-console.log(round.takeTurn());
+// console.log(round.takeTurn());
