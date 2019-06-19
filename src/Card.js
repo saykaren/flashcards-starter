@@ -74,11 +74,18 @@ class Deck{
 
 ///////////////Round Class//
 //takes and records guess also compares to evaluateGuess() from Turn class
-class Round extends Turn{
-  constructor(deck, userAnswer, card){
-    super(userAnswer, card);
+
+// class Round extends Turn{
+//   constructor(deck, userAnswer, card){
+//     super(userAnswer, card);
+//     this.deck = deck;
+//     this.incorrectguesses = [];
+//   }
+class Round {
+  constructor(deck){
     this.deck = deck;
     this.incorrectguesses = [];
+    this.turn = new Turn();
   }
   
   returnCurrentCard(){
@@ -88,57 +95,9 @@ class Round extends Turn{
   }
   
   //takeTuren not working.....6.18.2019 ............1:43pm issue was I wasn't relating it to a certain turn. Working with specific then will generalize it
-  takeTurn(turnCount){
-    var results = turnCount.evaluateGuess();
-    // var results = card.correctAnswer;
-    // if (userAnswer !== results){
-    //   var updateIncorectGuess = this.incorrectguesses + 1;
-    //   return `Nope ${this.incorrectguesses}`;
-    // }
-    // If (userAnswer == card.correctAnswer)
-    // {
-    //   return "Correct";
-    // } else {
-    //   return "Wrong Answer";
-    // }
-
-    // return "Correct"; 
-    // const currentTurn = new Turn(super.userAnswer, this.returnCurrentCard);
-    
-    // const nextCard = deck.cardDetails();
-    // const newUserAnswer = "sea otter";
-    // const newTurn = new Turn(newUserAnswer, nextCard[1]);
-    // return newTurn;
-    // var whosTurn = super.userAnswer;
-    // super.returnGuess();
-
-    // return whosTurn;
-    // var whosTurn = super.userAnswer;
-    // console.log(whosTurn);
-    // return whosTurn;
-
-    /////////boolean if guess was right
-    //const newTurn = new Turn(Turn.returnGuess(), card);
-    
-    // const newTurn = new Turn(super.userAnswer, super.card);
-    // console.log(super.userAnswer);
-    // console.log(super.card);
-    // console.log(newTurn);
-
-    // console.log(newTurn);
-    // console.log(turn);
-    // console.log(super.evaluateGuess());
-    // console.log(this.returnCurrentCard());
-    // var result = 
-    // console.log(this.incorrectguesses);
-    // if (turn.evaluateGuess() !== true){
-    //   this.incorrectguesses.push(deck.cardDetails());
-    // }
-    // console.log(turn.evaluateGuess());
-    // return newTurn;
-    // return result;
-    // return newTurn;
-    
+  takeTurn(){
+    const results = this.turn("ETF", card);
+    return results;
   }
 
   calculatePercentCorrect(){
