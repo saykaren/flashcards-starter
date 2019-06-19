@@ -87,10 +87,32 @@ class Round extends Turn{
     return detailsCard[0];
   }
   
-  //takeTuren not working.....6.18.2019 ............10:31am
-  takeTurn(){
-    console.log("takeTurn yes I am here");
-    var whosTurn = this.incorrectguesses;
+  //takeTuren not working.....6.18.2019 ............1:43pm issue was I wasn't relating it to a certain turn. Working with specific then will generalize it
+  takeTurn(turnCount){
+    var results = turnCount.evaluateGuess();
+    // var results = card.correctAnswer;
+    // if (userAnswer !== results){
+    //   var updateIncorectGuess = this.incorrectguesses + 1;
+    //   return `Nope ${this.incorrectguesses}`;
+    // }
+    // If (userAnswer == card.correctAnswer)
+    // {
+    //   return "Correct";
+    // } else {
+    //   return "Wrong Answer";
+    // }
+
+    // return "Correct"; 
+    // const currentTurn = new Turn(super.userAnswer, this.returnCurrentCard);
+    
+    // const nextCard = deck.cardDetails();
+    // const newUserAnswer = "sea otter";
+    // const newTurn = new Turn(newUserAnswer, nextCard[1]);
+    // return newTurn;
+    // var whosTurn = super.userAnswer;
+    // super.returnGuess();
+
+    // return whosTurn;
     // var whosTurn = super.userAnswer;
     // console.log(whosTurn);
     // return whosTurn;
@@ -116,7 +138,7 @@ class Round extends Turn{
     // return newTurn;
     // return result;
     // return newTurn;
-    return whosTurn;
+    
   }
 
   calculatePercentCorrect(){
@@ -168,7 +190,7 @@ const deck = new Deck([card, card1, card2, card1, card3, card4]);
 //////////Round - to create a first round with the deck of cards 
 const round1 = new Round(deck);
 
-const round1Result = round1.takeTurn();
+const round1Result = round1.takeTurn("stock");
 console.log(`Hello ${round1Result}`);
 console.log(round1Result);
 
