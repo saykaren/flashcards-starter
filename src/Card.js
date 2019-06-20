@@ -96,6 +96,12 @@ class Round {
   
   //takeTuren not working.....6.18.2019 ............1:43pm issue was I wasn't relating it to a certain turn. Working with specific then will generalize it
   takeTurn(){
+    //psydo code new Turn instance is created with input of new guess. 
+    //turn count updated, not sure where I should keep that? Does each of the constructors have to be an input? 
+    //need to get card details from Deck and add one to Deck
+    //get details from Turn.evaluateGuess();
+
+    
     const results = this.turn("ETF", card);
     return results;
   }
