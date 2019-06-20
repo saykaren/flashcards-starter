@@ -84,26 +84,38 @@ class Deck{
 class Round {
   constructor(deck){
     this.deck = deck;
-    this.incorrectguesses = [];
-    this.turn = new Turn();
+    this.incorrectguesses = 0;
+    this.turnCount = 0;
+    this.filteredDeck = this.deck;
   }
-  
+    
+
   returnCurrentCard(){
     ///////method that returns the current card being played
-    var detailsCard = deck.cardDetails();
+    const detailsCard = deck.cardDetails();
     return detailsCard[0];
   }
   
-  //takeTuren not working.....6.18.2019 ............1:43pm issue was I wasn't relating it to a certain turn. Working with specific then will generalize it
-  takeTurn(){
-    //psydo code new Turn instance is created with input of new guess. 
-    //turn count updated, not sure where I should keep that? Does each of the constructors have to be an input? 
-    //need to get card details from Deck and add one to Deck
-    //get details from Turn.evaluateGuess();
+  //takeTuren not working.....
+  takeTurn(userGuess){
+    //pseudo code new Turn instance is created with input of new guess. 
+       //need to get card details from Deck and add one to Deck
 
+    ///set a new variable 
     
-    const results = this.turn("ETF", card);
-    return results;
+    const newTurn = new Turn(userGuess, card);
+    const results = newTurn.evaluateGuess();
+    this.turnCount++;
+    if (!results) {
+      this.incorrectguesses++;
+      return "Incorrect";
+    } else {
+      // this.filteredDeck = this.deck.filter(currCard => currCard.num !== card.num);
+      console.log(this.deck);
+      this.filteredDeck = this.deck.cardNum.filter(currCard => currCard.num !== card.num);
+      return "correct!";
+    };
+  
   }
 
   calculatePercentCorrect(){
@@ -119,6 +131,7 @@ class Round {
 
 /////////Cards -Creating new Cards with details
 const card = new Card(1, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
+console.log(card);
 const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
 const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
 const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -155,7 +168,13 @@ const deck = new Deck([card, card1, card2, card1, card3, card4]);
 //////////Round - to create a first round with the deck of cards 
 const round1 = new Round(deck);
 
-const round1Result = round1.takeTurn("stock");
+round1.takeTurn("stock");
+round1.takeTurn("bonds");
+round1.takeTurn("ETF");
+round1.takeTurn("stocks");
+round1.takeTurn("bonds");
+console.log(round1.filteredDeck);
+
 console.log(`Hello ${round1Result}`);
 console.log(round1Result);
 
