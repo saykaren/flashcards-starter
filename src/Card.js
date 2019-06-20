@@ -113,7 +113,7 @@ const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pu
 const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
 const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
 const card4 = new Card(10, 'What is George\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Lex');
-
+// console.log(card.num);
 
 //////Turns -Creating new turns that take user answer and compares againes card
 const turn = new Turn("Bonds", card);
@@ -133,3 +133,12 @@ round1.takeTurn("under my mattress fool");
 round1.takeTurn("Realestate");
 round1.takeTurn("ETF");
 
+
+/////////example of test
+var sayBye =  function sayBye(firstName){
+  return `Hello ${firstName}`;
+  };
+
+
+
+module.exports = card, sayBye;
