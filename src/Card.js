@@ -1,20 +1,22 @@
-    module.exports = {
-      sayBye: function sayBye(firstName){
-        return `Hello ${firstName}`;
-      },
-      // Card:  new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF"),
-      
-    };
+    // module.exports = {
+    //   sayBye: function sayBye(firstName){
+    //     return `Hello ${firstName}`;
+    //   },
+    //   Card:  new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF"),
+    //   TestingNow: function(){
+    //     result = new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
+    //     return result;
+    //   },
+    // };
 
-
-class Card{
+////////////////issue with test exporting says unexpected token export not sure how else to export class as other ways not working 6.21
+export default class Card{
   constructor(num, question, options, correctAnswer){
     this.num = num;
     this.question = question;
     this.options = options;
     this.correctAnswer = correctAnswer;
     }
-
 }
 
 ////////////Turn Class
@@ -144,21 +146,12 @@ round1.takeTurn("ETF");
 
 
 /////////example of test
-var sayBye =  function sayBye(firstName){
-  return `Hello ${firstName}`;
-  };
-
-
-
-console.log(sayBye);
-console.log(Card);
-
-// define(function (require, exports, module){
-//   module.exports = {
-//     sayBye, 
-//     Card
+// var sayBye =  function sayBye(firstName){
+//   return `Hello ${firstName}`;
 //   };
-// });
+
+
+
 
 
 
