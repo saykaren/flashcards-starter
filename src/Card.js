@@ -1,3 +1,12 @@
+    module.exports = {
+      sayBye: function sayBye(firstName){
+        return `Hello ${firstName}`;
+      },
+      // Card:  new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF"),
+      
+    };
+
+
 class Card{
   constructor(num, question, options, correctAnswer){
     this.num = num;
@@ -141,4 +150,15 @@ var sayBye =  function sayBye(firstName){
 
 
 
-module.exports = card, sayBye;
+console.log(sayBye);
+console.log(Card);
+
+// define(function (require, exports, module){
+//   module.exports = {
+//     sayBye, 
+//     Card
+//   };
+// });
+
+
+
