@@ -2,9 +2,10 @@ const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should();
 
+// const Card = require('../src/Card');
 import Card from '../src/Card.js';
-const Card = require('../src/Card');
 
+console.log(Card);
 // const sayBye = require('../src/Card');
 // sayBye = Card.sayBye("Karen");
 // TestingNow = Card.TestingNow();
