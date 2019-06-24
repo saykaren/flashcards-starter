@@ -2,9 +2,13 @@ const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should();
 
+import Card from '../src/Card.js';
 const Card = require('../src/Card');
+
 // const sayBye = require('../src/Card');
-sayBye = Card.sayBye("Karen");
+// sayBye = Card.sayBye("Karen");
+// TestingNow = Card.TestingNow();
+
 
 // const Turn = require('.../src/Card');
 
@@ -13,7 +17,8 @@ sayBye = Card.sayBye("Karen");
 
 describe('Card', function() {
 
-  it.skip('should be a function', function() {
+  
+  it('should be a function', function() {
     const card = new Card();
     expect(Card).to.be.a('function');
   });
@@ -24,8 +29,8 @@ describe('Card', function() {
   });  
   
   it.skip('should store a question', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    expect(card.question).to.equal('What allows you to define a set of related information using key-value pairs?');
+    const card = new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
+    expect(card.question).to.equal("What is Karen\'s favorite investment");
   });  
 
   it.skip('should store a list of possible answers', function() {
@@ -48,12 +53,17 @@ describe('Card', function() {
  
 });
 
-describe("Testing", function(){
-  it("should be working", function(){
-    // const resultFirst = "Karen";
-    // expect(sayBye(resultFirst)).to.equal("Hello Karen");
-    expect(sayBye).to.equal("Hello Karen");
-    });
-});
+// describe("Testing", function(){
+//   it("should be working", function(){
+//     // const resultFirst = "Karen";
+//     // expect(sayBye(resultFirst)).to.equal("Hello Karen");
+//     expect(sayBye).to.equal("Hello Karen");
+//     });
+
+//     it('should store a question', function() {
+//       const card = TestingNow;
+//       expect(card.question).to.equal("What is Karen\'s favorite investment");
+//     });
+// });
 
 
