@@ -20,7 +20,7 @@ export default class Card{
 }
 
 ////////////Turn Class
-class Turn{
+export class Turn{
   constructor(userAnswer, card){
     this.userAnswer = userAnswer;
     this.card = card;

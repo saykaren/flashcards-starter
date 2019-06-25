@@ -4,17 +4,10 @@ const should = chai.should();
 
 // const Card = require('../src/Card');
 import Card from '../src/Card.js';
+// import {Turn} from '../src/Card.js';
 
 console.log(Card);
-// const sayBye = require('../src/Card');
-// sayBye = Card.sayBye("Karen");
-// TestingNow = Card.TestingNow();
 
-
-// const Turn = require('.../src/Card');
-
-// //Results
-// sayHi = sayBye.sayBye();
 
 describe('Card', function() {
 
