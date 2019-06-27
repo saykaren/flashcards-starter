@@ -133,9 +133,9 @@ round1.takeTurn("Realestate");
 round1.takeTurn("ETF");
 
 
-module.exports= Card, Turn;
+// module.exports= Card, Turn;
 
-// module.exports= {
-//   Card: Card,
-//   Turn: Turn,
-// }
+module.exports= {
+  Card: Card,
+  Turn: Turn,
+}
