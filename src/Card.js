@@ -1,20 +1,8 @@
-    // module.exports = {
-    //   sayBye: function sayBye(firstName){
-    //     return `Hello ${firstName}`;
-    //   },
-    //   Card:  new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF"),
-    //   TestingNow: function(){
-    //     result = new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
-    //     return result;
-    //   },
-    // };
-
-////////////////issue with test exporting says unexpected token export not sure how else to export class as other ways not working 6.21
-export default class Card{
-  constructor(num, question, options, correctAnswer){
+class Card{
+  constructor(num, question, answers, correctAnswer){
     this.num = num;
     this.question = question;
-    this.options = options;
+    this.answers = answers;
     this.correctAnswer = correctAnswer;
     }
 }
@@ -145,13 +133,9 @@ round1.takeTurn("Realestate");
 round1.takeTurn("ETF");
 
 
-/////////example of test
-// var sayBye =  function sayBye(firstName){
-//   return `Hello ${firstName}`;
-//   };
+module.exports= Card, Turn;
 
-
-
-
-
-
+// module.exports= {
+//   Card: Card,
+//   Turn: Turn,
+// }
