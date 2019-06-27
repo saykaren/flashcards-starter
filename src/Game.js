@@ -13,6 +13,14 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
+
+  currentRound(){
+
+  }
+
+  start(){
+    return 2;
+  }
 }
 
 module.exports = Game;
