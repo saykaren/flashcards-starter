@@ -5,14 +5,15 @@ var Game = require('../src/Game.js');
 
 describe('Game', function() {
   //was using when it was just returning the array
-  it.skip('should return an Array for testing', function(){
+ 
+  it('should print a welcome notice', function(){
     const game = new Game();
-    expect(game.start()).to.be.an('array');
+    expect(game.currentRound).to.equal(0);
   });
-  //use for counting cards
-  it('should return Incorrect', function(){
+
+  it('should be a function, Game class', function() {
     const game = new Game();
-    expect(game.start()).to.equal("Incorrect");
+    expect(Game).to.be.a('function');
   });
 
 });

@@ -6,13 +6,13 @@ var myClasses = require('../src/Card.js');
 
 class Game {
   constructor() {
-    // this.currentRound = currentRound;
-    // this.deck = deck;
+    this.currentRound = 0;
   }
 
   printMessage(deck, round) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
+    this.currentRound = round;
   }
 
   printQuestion(round) {
@@ -29,13 +29,15 @@ class Game {
 
    // Creates a new Round using the Deck
    const newRound = new myClasses.Round(mydeck);
+   this.currentRound = newRound;
+  
+  // invokes printMessage to display the message in the CLI
+   this.printMessage(mydeck, newRound);
 
-   return newRound.takeTurn("george");
-
-
-// invokes printMessage to display the message in the CLI
-// invokes printQuestion to kick off our helper functions that allow interaction via the CLI
+  // invokes printQuestion to kick off our helper functions that allow interaction via the CLI
+  this.printQuestion(newRound);
   }
+
 }
 
 module.exports = Game;

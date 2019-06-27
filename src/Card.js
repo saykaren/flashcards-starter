@@ -70,7 +70,7 @@ class Round {
   constructor(deck){
     this.deck = deck;
     this.incorrectguesses = 0;
-    this.turnCount = 0;
+    this.turns = 0;
     this.filteredDeck = this.deck;
   }    
 
@@ -83,7 +83,7 @@ class Round {
   takeTurn(userGuess){ 
     const newTurn = new Turn(userGuess, card);
     const results = newTurn.evaluateGuess();
-    this.turnCount++;
+    this.turns++;
     if (!results) {
       this.incorrectguesses++;
       return "Incorrect";
@@ -94,7 +94,7 @@ class Round {
   }
 
   calculatePercentCorrect(){
-    const percentRight = ((this.turnCount - this.incorrectguesses)/this.turnCount)*100;
+    const percentRight = ((this.turns - this.incorrectguesses)/this.turns)*100;
     return percentRight;
   }
 
@@ -107,30 +107,30 @@ class Round {
 }
 
 /////////Cards -Creating new Cards with details
-const card = new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
-const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-const card4 = new Card(10, 'What is George\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Lex');
+// const card = new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
+// const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+// const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+// const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+// const card4 = new Card(10, 'What is George\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Lex');
 // console.log(card.num);
 
 //////Turns -Creating new turns that take user answer and compares againes card
-const turn = new Turn("Bonds", card);
-const turn2 = new Turn("single stock", card);
-const turn3 = new Turn("ETF", card);
+// const turn = new Turn("Bonds", card);
+// const turn2 = new Turn("single stock", card);
+// const turn3 = new Turn("ETF", card);
 
 
 //////////Deck - to issues a new Deck with certain cards - right now all the cards I made
-const deck = new Deck([card, card1, card2, card1, card3, card4]);
+// const deck = new Deck([card, card1, card2, card1, card3, card4]);
 
 //////////Round - to create a first round with the deck of cards 
-const round1 = new Round(deck);
+// const round1 = new Round(deck);
 
-round1.takeTurn("stock");
-round1.takeTurn("bonds");
-round1.takeTurn("under my mattress fool");
-round1.takeTurn("Realestate");
-round1.takeTurn("ETF");
+// round1.takeTurn("stock");
+// round1.takeTurn("bonds");
+// round1.takeTurn("under my mattress fool");
+// round1.takeTurn("Realestate");
+// round1.takeTurn("ETF");
 
 
 // module.exports= Card, Turn;
