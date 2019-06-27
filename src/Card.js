@@ -136,6 +136,6 @@ round1.takeTurn("ETF");
 // module.exports= Card, Turn;
 
 module.exports= {
-  Card: Card,
-  Turn: Turn,
+  Card,
+  Turn,
 }
