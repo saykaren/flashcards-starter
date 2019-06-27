@@ -1,12 +1,14 @@
 const chai = require('chai');
 const expect = chai.expect;
-const should = chai.should();
+
 
 // const Card = require('../src/Card');
 import Card from '../src/Card.js';
 // import {Turn} from '../src/Card.js';
 
+const card = new Card(20, "What is Karen\'s favorite investment", ["single stock", "ETF", "Bonds", "Realestate", "under my mattress fool"], "ETF");
 console.log(Card);
+
 
 
 describe('Card', function() {
