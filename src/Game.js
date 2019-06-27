@@ -28,8 +28,9 @@ class Game {
    const mydeck = new myClasses.Deck(cards);
 
    // Creates a new Round using the Deck
+   const newRound = new myClasses.Round(mydeck);
 
-   return mydeck.countCards();
+   return newRound.takeTurn("george");
 
 
 // invokes printMessage to display the message in the CLI

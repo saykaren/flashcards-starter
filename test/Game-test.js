@@ -10,9 +10,9 @@ describe('Game', function() {
     expect(game.start()).to.be.an('array');
   });
   //use for counting cards
-  it('should return 30 as there is 30 cards', function(){
+  it('should return Incorrect', function(){
     const game = new Game();
-    expect(game.start()).to.equal(30);
+    expect(game.start()).to.equal("Incorrect");
   });
 
 });
