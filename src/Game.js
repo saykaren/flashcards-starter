@@ -2,6 +2,8 @@ const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 
+var myClasses = require('../src/Card.js');
+
 class Game {
   constructor() {
     // this.currentRound = currentRound;
@@ -19,12 +21,17 @@ class Game {
 
   start(){
     
-// Creates Cards
+// Creates Cards from data in data.js which is an Array with Objects
    const cards = prototypeQuestions;
-   return cards;
-// Puts Cards in a Deck
-  // const deck = new deck(this.prototypeQuestions);
-// Creates a new Round using the Deck
+
+   //properly putting those cards into the Deck
+   const mydeck = new myClasses.Deck(cards);
+
+   // Creates a new Round using the Deck
+
+   return mydeck.countCards();
+
+
 // invokes printMessage to display the message in the CLI
 // invokes printQuestion to kick off our helper functions that allow interaction via the CLI
   }

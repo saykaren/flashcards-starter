@@ -138,4 +138,6 @@ round1.takeTurn("ETF");
 module.exports= {
   Card,
   Turn,
+  Deck,
+  Round,
 }
