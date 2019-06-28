@@ -5,12 +5,14 @@ const util = require('./util');
 var myClasses = require('../src/Card.js');
 
 class Game {
-  constructor() {
-    this.currentRound = 0;
+  constructor(currentRound, deck, round) {
+    this.currentRound = currentRound;
+    this.deck = deck;
+    this.round = round;
   }
 
   printMessage(deck, round) {
-      console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+      console.log(`Welcome to FlashCards! You are playing with MY cards.
 -----------------------------------------------------------------------`)
     this.currentRound = round;
   }
