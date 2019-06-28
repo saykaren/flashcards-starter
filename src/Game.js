@@ -22,7 +22,7 @@ class Game {
   }
 
   start(){
-    
+
 // Creates Cards from data in data.js which is an Array with Objects
    const cards = prototypeQuestions;
 

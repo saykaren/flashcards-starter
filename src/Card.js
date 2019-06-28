@@ -76,12 +76,12 @@ class Round {
 
   returnCurrentCard(){
     ///////method that returns the current card being played
-    const detailsCard = deck.cardDetails();
+    const detailsCard = this.deck.cardDetails();
     return detailsCard[0];
   }
   
   takeTurn(userGuess){ 
-    const newTurn = new Turn(userGuess, card);
+    const newTurn = new Turn(userGuess, this.returnCurrentCard());
     const results = newTurn.evaluateGuess();
     this.turns++;
     if (!results) {
