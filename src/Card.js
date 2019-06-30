@@ -88,7 +88,7 @@ class Round {
       this.incorrectguesses++;
       return "Incorrect";
     } else {
-      this.filteredDeck = this.deck.cardNum.filter(currCard => currCard.num !== card.num);
+      this.filteredDeck = this.deck.cardNum.shift();
       return "correct!";
     };
   }
@@ -141,3 +141,6 @@ module.exports= {
   Deck,
   Round,
 }
+
+// var filterVar = prototypeData[0].id;
+// var filtered = prototypeData[0].id.filter(x=>prototypeData[x].id !== prototypeData[0].id);
